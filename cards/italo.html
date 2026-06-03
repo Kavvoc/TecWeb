@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cards Dinâmicos</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .card {
+      width: 150px;
+      height: 100px;
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="addBtn">ADD</button>
+
+  <div class="container" id="container"></div>
+
+<script>
+  let counter = 1;
+
+  const container = document.getElementById("container");
+  const button = document.getElementById("addBtn");
+
+ 
+  fetch("data.json")
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(item => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+
+        card.setAttribute("data-id", counter);
+        card.textContent = item.titulo;
+
+        container.appendChild(card);
+
+        counter++;
+      });
+    });
+    
+  button.addEventListener("click", () => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    card.setAttribute("data-id", counter);
+    card.textContent = `Card ${counter}`;
+
+    container.appendChild(card);
+
+    counter++;
+  });
+</script>
+
+</body>
+</html>

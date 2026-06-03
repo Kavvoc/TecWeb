@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro</title>
+
+  <!-- professor, eu não sabia se era para ter javascript na página de cadastro,
+então deixei só HTML e CSS -->
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      color: #1f2937;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #6366f1;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #4f46e5;
+    }
+
+    a {
+      display: block;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #6366f1;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h2>Cadastro</h2>
+
+    <input type="text" placeholder="Usuário">
+    <input type="email" placeholder="E-mail">
+    <input type="password" placeholder="Senha">
+
+    <button>Cadastrar</button>
+
+    <a href="login.html">Voltar para login</a>
+  </div>
+
+</body>
+</html>
